@@ -26,6 +26,37 @@
         </div>
     </div>
 </div>
+<div th:fragment="job-listing-table">
+<table class="job-listing" th:each="job: ${jobs}"> <!-- For each job within the Jobs arraly list, print out the job.id,
+job.name, etc below; each label/value is a row; and set the th:each at the table level so each job will have its own table.
+ Originally built this in list-jobs.html and search.html separately and ensured it was functioning before bringing into
+ fragments and replacing-->
+    <tr>
+        <td>ID</td>
+        <td th:text="${job.id}"></td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td th:text="${job.name}"></td>
+    </tr>
+    <tr>
+        <td>Employer</td>
+        <td th:text="${job.employer}"></td>
+    </tr>
+    <tr>
+        <td>Location</td>
+        <td th:text="${job.location}"></td>
+    </tr>
+    <tr>
+        <td>Position Type</td>
+        <td th:text="${job.positionType}"></td>
+    </tr>
+    <tr>
+        <td>Skill</td>
+        <td th:text="${job.coreCompetency}"></td>
+    </tr>
+</table>
+</div>
 
 </body>
 </html>
